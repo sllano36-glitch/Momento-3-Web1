@@ -1,53 +1,62 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Farmacia - Catalogo de medicamentos</title>
-  <link rel="stylesheet" href="catalogo.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalogo de Medicamentos</title>
+  <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
+
   <main>
-    <h1>Catalogo de medicamentos</h1>
-    <p class="subtitulo">Agrega medicamentos y buscalos sin recargar la pagina.</p>
 
-    
-    <section>
-      <h2>Nuevo medicamento</h2>
-      <div class="fila">
-        <div>
-          <label for="inputNombre">Nombre</label>
-          <input type="text" id="inputNombre" placeholder="Ej: Loratadina 10mg">
-        </div>
-        <div>
-          <label for="inputPrecio">Precio (COP)</label>
-          <input type="number" id="inputPrecio" min="0" placeholder="Ej: 4500">
-        </div>
-        <div>
-          <label for="selectLaboratorio">Laboratorio</label>
-          <select id="selectLaboratorio"></select>
-        </div>
-      </div>
-      <button id="btnGuardar">Guardar medicamento</button>
-      <p id="mensaje" role="status"></p>
+    <h1>Catalogo de Medicamentos</h1>
+
+    <!-- Importacion temporal de laboratorios -->
+    <button id="btnImportar">
+      Agregar laboratorios
+    </button>
+
+    <section class="formulario">
+      <input type="text" id="inputNombre"
+        placeholder="Nombre del medicamento">
+
+      <input type="number" id="inputPrecio"
+        placeholder="Precio" min="0">
+
+      <select id="selectLaboratorio"></select>
+
+      <button id="btnGuardar">Guardar</button>
     </section>
 
-   
+    <div id="mensaje"></div>
+
     <section>
-      <h2>Medicamentos</h2>
-      <div class="fila">
-        <div>
-          <label for="inputBuscar">Buscar por nombre</label>
-          <input type="text" id="inputBuscar" placeholder="Escribe para filtrar...">
-        </div>
+      <input type="text" id="inputBuscar"
+        class="buscador"
+        placeholder="Buscar medicamento">
+
+      <div class="acciones">
+        <button id="btnMostrar">Mostrar medicamentos </button>
+        <button id="btnLimpiar">Borrar</button>
       </div>
-      <button id="btnMostrar">Mostrar todos</button>
-      <button id="btnLimpiar" class="secundario">Limpiar lista</button>
-      <p>Resultados: <span id="contador">0</span></p>
+    </section>
+
+    <section>
+      <h2>Resultados</h2>
+
       <ul id="listaMedicamentos"></ul>
+
+      <p class="total">
+        Total: <span id="contador">0</span>
+      </p>
     </section>
+
   </main>
 
   <script src="catalogo.js"></script>
+  <script src="importar-laboratorios.js"></script>
+
 </body>
 </html>
